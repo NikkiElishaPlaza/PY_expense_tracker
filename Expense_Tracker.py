@@ -126,7 +126,13 @@ def summarize_expenses():
 
 #Repeating process and adding data
 def continue_input(expense: Expense, expense_file_path: str):
+    while True:
+        input_question = "Transaction complete \n\n" + \
+                        f"{separator}\n\n Would you like to add another expense? (Yes/No): "
+        
+        user_choice = input(f"\n{input_question} ").strip()
 
+        
 
 
 
