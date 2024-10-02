@@ -11,13 +11,13 @@ def main():
     expense = get_user_expense()
 
     #Write their expense to a file.
-    save_expense_to_file()
+    save_expense_to_file(expense, expense_file_path)
 
     #Read file and summarize expense.
-    summarize_expenses()
+    summarize_expenses(expense_file_path)
 
     #Repearing the process and continue adding data
-    continue_input()
+    continue_input(expense, expense_file_path)
 
 def get_use_expense():
 
