@@ -116,7 +116,12 @@ def summarize_expenses():
         print(f"{separator}\n\nTotal Number of Expenses: {total_number_of_expenses}\n"
               f"\nTotal Amount: PHP {total_amount:.2f}\n\n" f"{separator}")
         
-    
+    except FileNotFoundError:
+        print("No expenses found. Please save some expenses first.")
+    except ValueError as ve:
+        print(f"An error occured while summarizing expenses: {e}\n\n {separator}")
+    except Exception as e:
+        print(f"An error occured while summarizing expenses: {e}\n\n")
 
 def continue_input():
 
