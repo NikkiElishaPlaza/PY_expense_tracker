@@ -31,18 +31,19 @@ def get_use_expense():
         else:
             print("Kindly enter a calid name that contains letters and not numbers.")
 
-print(f"\n{separator}\n")
+    print(f"\n{separator}\n")
 
-while True:
-    try:
-        expense_amount = float(input("Enter expense amount in PHP: "))
-        break
-    except ValueError:
-        print("Kindly enter a valid number for the expense amount.")
+    while True:
+        try:
+            expense_amount = float(input("Enter expense amount in PHP: "))
+            break
+        except ValueError:
+            print("Kindly enter a valid number for the expense amount.")
 
 
 #List categories
-    expense_categories = [
+
+expense_categories = [
         "Food"
         "Home"
         "Work"
@@ -54,8 +55,8 @@ print(f"\n{separator}\n")
 
 while True:
     print("Select a category: ")
-    for i category_name in enumerate(expense_categories):
-    print(f"\n {i + 1}/ {category_name}\n")
+    for i, category_name in enumerate(expense_categories):
+        print(f"\n {i + 1}/ {category_name}\n")
     
     value_range = f"[1 - {len(expense_categories)}]"
 
@@ -72,8 +73,8 @@ while True:
         print(f"Kindly enter a valid category between 1 and {len(expense_categories)}.")
 
 
-
-def save_expense_to_file():
+#Save the entered Data
+def save_expense_to_file(Expense, expense_file_path):
 
 
 def summarize_expenses():
