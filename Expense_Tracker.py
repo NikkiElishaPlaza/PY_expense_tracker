@@ -123,7 +123,9 @@ def summarize_expenses():
     except Exception as e:
         print(f"An error occured while summarizing expenses: {e}\n\n")
 
-def continue_input():
+
+#Repeating process and adding data
+def continue_input(expense: Expense, expense_file_path: str):
 
 
 
