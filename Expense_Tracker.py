@@ -88,8 +88,28 @@ def save_expense_to_file(Expense, expense_file_path):
     with open(expense_file_path, "a", encoding="utf-8") as f:
         f.write(f"{expense.name}, {expense.amount}, {expense.category}\n")
 
-def summarize_expenses():
 
+#Summarize the overall data
+def summarize_expenses():
+    print(f"""Summarizing User Expense\n\n{separator}""")
+
+    total_amount = 0.0
+    total_number_of_expenses = 0
+
+    try:
+        with open(expense_file_path, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+            print(f"\n{"Expense Name":<20} {"Amount (PHP)":<15} {"Category"}")
+
+            for line in lines:
+                components = line.strip().split(", ")
+                if len(components) == 3:
+                    name, amount, category = components
+                    amount_float = float(amount)
+                    total_amount += amount_float
+                    total_number_of_expenses += 1
+
+                    
 
 def continue_input():
 
