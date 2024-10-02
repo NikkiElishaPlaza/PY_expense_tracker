@@ -75,7 +75,7 @@ def get_user_expense():
 
 
 #Save the entered Data
-def save_expense_to_file(Expense, expense_file_path):
+def save_expense_to_file(expense: Expense, expense_file_path):
     print(f"""\n{separator}\n\n Saving User Expense\n\n{separator}
 
     Expense name:   {expense.name}\n
