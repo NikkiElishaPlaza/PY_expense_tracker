@@ -20,7 +20,7 @@ def main():
     continue_input(expense, expense_file_path)
 
 #Get expense name
-def get_use_expense():
+def get_user_expense():
     print(f"""{separator}\n\n Getting User Expense\n\n""")
 
     while True:
@@ -76,11 +76,17 @@ def get_use_expense():
 
 #Save the entered Data
 def save_expense_to_file(Expense, expense_file_path):
-    print(f"""\n{separator}\n\n Saving User Expense\n\n{separator}"
-          
-          "")
+    print(f"""\n{separator}\n\n Saving User Expense\n\n{separator}
 
+    Expense name:   {expense.name}\n
+    Category:       {expense.category}\n
+    Amount:         PHP {expense.amount: .2f}\n
+    Saving to:      {expense_file_path}
 
+{separator}\n""")
+
+    with open(expense_file_path, "a", encoding="utf-8") as f:
+        f.write(f"{expense.name}, {expense.amount}, {expense.category}\n")
 
 def summarize_expenses():
 
