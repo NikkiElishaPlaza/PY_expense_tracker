@@ -3,7 +3,7 @@ from Expense import Expense
 separator = "=" * 50
 
 def main():
-    print(f"""{separator}\n\n Running Expense Tracker!\n""")
+    print(f"""{separator}\n\n             🟢 Running Expense Tracker! 🟢\n""")
 
     expense_file_path = "expenses.csv"
 
@@ -21,7 +21,7 @@ def main():
 
 #Get expense name
 def get_user_expense():
-    print(f"""{separator}\n\n Getting User Expense\n\n""")
+    print(f"""{separator}\n\n              ✨ Getting User Expense ✨\n\n{separator}\n""")
 
     while True:
         expense_name = input("Enter expense name: ")
@@ -44,11 +44,11 @@ def get_user_expense():
 #List categories
 
     expense_categories = [
-            "Food"
-            "Home"
-            "Work"
-            "Fun"
-            "Miscellaneous"
+            "🍴 Food 🍴"
+            "🏠 Home 🏠"
+            "💼 Work 💼"
+            "🎉 Fun 🎉"
+            "🌟 Miscellaneous 🌟"
         ]
 
     print(f"\n{separator}\n")
@@ -76,7 +76,7 @@ def get_user_expense():
 
 #Save the entered Data
 def save_expense_to_file(expense: Expense, expense_file_path):
-    print(f"""\n{separator}\n\n Saving User Expense\n\n{separator}
+    print(f"""\n{separator}\n\n     ✨ Saving User Expense ✨\n\n{separator}
 
     Expense name:   {expense.name}\n
     Category:       {expense.category}\n
@@ -91,7 +91,7 @@ def save_expense_to_file(expense: Expense, expense_file_path):
 
 #Summarize the overall data
 def summarize_expenses(expense_file_path):
-    print(f"""Summarizing User Expense\n\n{separator}""")
+    print(f"""          ✨ Summarizing User Expense ✨\n\n{separator}""")
 
     total_amount = 0.0
     total_number_of_expenses = 0
@@ -127,13 +127,13 @@ def summarize_expenses(expense_file_path):
 #Repeating process and adding data
 def continue_input(expense: Expense, expense_file_path: str):
     while True:
-        input_question = "Transaction complete \n\n" + \
+        input_question = "          ✨Transaction complete ✨\n\n" + \
                         f"{separator}\n\n Would you like to add another expense? (Yes/No): "
         
         user_choice = input(f"\n{input_question} ").strip()
 
         if user_choice.lower() == "yes":
-            print(f"\n{separator}\n\n Repeatin Process\n")
+            print(f"\n{separator}\n\n               ✨ Repeating Process ✨\n")
             main()
             break
         elif user_choice.lower == "no":
@@ -141,7 +141,6 @@ def continue_input(expense: Expense, expense_file_path: str):
             break
         else:
             print("Invalid input. Please enter 'Yes' or 'No'.")
-
 
 
 if __name__ == "_main_":
