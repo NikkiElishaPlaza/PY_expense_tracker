@@ -132,7 +132,15 @@ def continue_input(expense: Expense, expense_file_path: str):
         
         user_choice = input(f"\n{input_question} ").strip()
 
-        
+        if user_choice.lower() == "yes":
+            print(f"\n{separator}\n\n Repeatin Process\n")
+            main()
+            break
+        elif user_choice.lower == "no":
+            print("Thank you for using Expense Tracker!")
+            break
+        else:
+            print("Invalid input. Please enter 'Yes' or 'No'.")
 
 
 
