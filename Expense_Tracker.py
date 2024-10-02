@@ -19,7 +19,27 @@ def main():
     #Repearing the process and continue adding data
     continue_input(expense, expense_file_path)
 
+#Get expense name
 def get_use_expense():
+    print(f"""{separator}\n\n Getting User Expense\n\n""")
+
+    while True:
+        expense_name = input("Enter expense name: ")
+
+        if expense_name and not any(char.isdigit() for char in expense_name):
+            break
+        else:
+            print("Kindly enter a calid name that contains letters and not numbers.")
+
+print(f"\n{separator}\n")
+
+while True:
+    try:
+        expense_amount = floar(input("Enter expense amount in PHP: "))
+        break
+    except ValueError:
+        print("Kindly enter a valid number for the expense amount.")
+
 
 
 def save_expense_to_file():
