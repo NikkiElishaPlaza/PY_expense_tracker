@@ -43,38 +43,43 @@ def get_use_expense():
 
 #List categories
 
-expense_categories = [
-        "Food"
-        "Home"
-        "Work"
-        "Fun"
-        "Miscellaneous"
-    ]
+    expense_categories = [
+            "Food"
+            "Home"
+            "Work"
+            "Fun"
+            "Miscellaneous"
+        ]
 
-print(f"\n{separator}\n")
+    print(f"\n{separator}\n")
 
-while True:
-    print("Select a category: ")
-    for i, category_name in enumerate(expense_categories):
-        print(f"\n {i + 1}/ {category_name}\n")
-    
-    value_range = f"[1 - {len(expense_categories)}]"
+    while True:
+        print("Select a category: ")
+        for i, category_name in enumerate(expense_categories):
+            print(f"\n {i + 1}/ {category_name}\n")
+        
+        value_range = f"[1 - {len(expense_categories)}]"
 
-    try:
-        selected_index = int(input(f"{separator}\n\n Enter a category number {value_range}: "))-1
+        try:
+            selected_index = int(input(f"{separator}\n\n Enter a category number {value_range}: "))-1
 
-        if selected_index in range(len(expense_categories)):
-            selected_category = expense_categories[selected_index]
-            new_expense = Expense(name = expense_name, category = selected_category, amount= expense_amount)
-        else:
-            print("Invalid category. Please try again.")
+            if selected_index in range(len(expense_categories)):
+                selected_category = expense_categories[selected_index]
+                new_expense = Expense(name = expense_name, category = selected_category, amount= expense_amount)
+            else:
+                print("Invalid category. Please try again.")
 
-    except ValueError:
-        print(f"Kindly enter a valid category between 1 and {len(expense_categories)}.")
+        except ValueError:
+            print(f"Kindly enter a valid category between 1 and {len(expense_categories)}.")
+
 
 
 #Save the entered Data
 def save_expense_to_file(Expense, expense_file_path):
+    print(f"""\n{separator}\n\n Saving User Expense\n\n{separator}"
+          
+          "")
+
 
 
 def summarize_expenses():
