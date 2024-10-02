@@ -90,7 +90,7 @@ def save_expense_to_file(expense: Expense, expense_file_path):
 
 
 #Summarize the overall data
-def summarize_expenses():
+def summarize_expenses(expense_file_path):
     print(f"""Summarizing User Expense\n\n{separator}""")
 
     total_amount = 0.0
