@@ -109,7 +109,14 @@ def summarize_expenses():
                     total_amount += amount_float
                     total_number_of_expenses += 1
 
-                    
+                    print (f"\n{name:<20} {amount_float:<15.2f} {category}")
+                else:
+                    print(f"Warning: Invalid line format - {line.strip()}")
+
+        print(f"{separator}\n\nTotal Number of Expenses: {total_number_of_expenses}\n"
+              f"\nTotal Amount: PHP {total_amount:.2f}\n\n" f"{separator}")
+        
+    
 
 def continue_input():
 
