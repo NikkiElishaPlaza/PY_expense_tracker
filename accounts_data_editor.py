@@ -72,3 +72,48 @@ class Accounts_Data_Editor:
 
             # call return if there is an error to stop the process
             return
+        
+# create a CSV file for each Account
+    def create_financial_files(self, source_filename):
+        try:
+            # define the folder name
+            folder_name = "Financials"
+
+            # create the folder if it doesn't exist
+            if not os.path.exists(folder_name):
+                os.makedirs(folder_name)
+
+            # check if the source file exists
+            if not os.path.exists(source_filename):
+                print(f"Error: File {source_filename} does not exist.")
+                return
+
+            # open the source CSV file for reading
+            with open(source_filename, mode="r", newline="") as source_file:
+                reader = csv.DictReader(source_file)
+
+                for row in reader:
+                    # extract the Name from the current row
+                    name = row.get("Name")
+                    if not name:
+                        print("Skipping row: Missing 'Name' field.")
+                        continue
+
+                    # generate the new file path inside the Financials folder
+                    new_filename = os.path.join(folder_name, f"{name}_financials.csv")
+
+                    # check if the financial file already exists
+                    if not os.path.exists(new_filename):
+                        # create a new file with the custom header
+                        with open(new_filename, mode="w", newline="") as new_file:
+                            writer = csv.DictWriter(
+                                new_file,
+                                fieldnames=["Date", "Amount", "Category", "Description"]
+                            )
+                            writer.writeheader()
+                        print(f"Created file with header: {new_filename}")
+                    else:
+                        print(f"File already exists: {new_filename}")
+
+        except Exception as e:
+            print(f"Error: {e}")
