@@ -117,3 +117,21 @@ class Accounts_Data_Editor:
 
         except Exception as e:
             print(f"Error: {e}")
+
+    def delete_financial_file(self, name):
+        try:
+            # define the folder name where financial files are stored
+            folder_name = "Financials"
+
+            # construct the file path
+            file_path = os.path.join(folder_name, f"{name}_financials.csv")
+
+            # check if the file exists
+            if os.path.exists(file_path):
+                # delete the file
+                os.remove(file_path)
+                print(f"File '{file_path}' has been deleted successfully.")
+            else:
+                print(f"Error: File '{file_path}' does not exist.")
+        except Exception as e:
+            print(f"Error: {e}")
