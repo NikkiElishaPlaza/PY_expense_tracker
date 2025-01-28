@@ -9,7 +9,7 @@ class financials_editor:
         self.filename = os.path.join(folder_name, f"{filename}_financials.csv")
     pass
 
-    def add_entry():
+    def add_entry(self, date, amount, category, description):
         csv_file = self.filename
 
         new_entry = {
@@ -20,5 +20,7 @@ class financials_editor:
         }
 
         with open(csv_file, "a", newline="") as csvfile:
-            writer = csv.DictWriter()
+            writer = csv.DictWriter(csvfile, fieldnames=self.fieldname)
             writer.writerrow()
+
+        print("Entry added successfully")
