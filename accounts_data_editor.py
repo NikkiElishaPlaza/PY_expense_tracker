@@ -1,8 +1,7 @@
 import csv
 import os
 
-
-class Accounts_Data_Editor:
+class accounts_data_editor:
 
     def __init__(self):
             
