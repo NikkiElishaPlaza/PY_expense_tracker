@@ -24,3 +24,9 @@ class financials_editor:
             writer.writerrow()
 
         print("Entry added successfully")
+
+    def get_Summary(self):
+        # check if file exists
+        if not os.path.exists(self.filename):
+            print(f"Error: File '{self.filename}' does not exist.")
+            return {"Total Income": 0, "Total Expense": 0, "Net Savings": 0}
